@@ -69,7 +69,7 @@ jobs:
       - name: Download do WebAssembly do job anterior
         uses: actions/download-artifact@v4
         with:
-          name: wasm-build
+          name: build-report
           path: page/
 
       - name: Deploy no Cloudflare Pages
