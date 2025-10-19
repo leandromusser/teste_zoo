@@ -25,7 +25,7 @@ jobs:
   build:
     name: Build do WebAssembly
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     needs: test
 
     steps:
