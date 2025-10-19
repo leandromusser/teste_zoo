@@ -1,5 +1,5 @@
 #include "minunit.h"
-#include "zoo.h"
+#include "../src/zoo.h"
 
 MU_TEST(test_price_for_age) {
     mu_check(getPriceForAge(50) == 30);
