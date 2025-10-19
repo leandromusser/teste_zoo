@@ -1,4 +1,4 @@
-#include "zoo.h";
+#include "zoo.h"
 
 int isNumberOfTicketsAllowed(int numberOfTickets, int maxTickets) {
     if (numberOfTickets <= 0) return 0;
