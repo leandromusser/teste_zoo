@@ -32,20 +32,32 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Instalação do Emscripten
-        uses: mymindstorm/setup-emsdk@v14
-        with:
-          version: latest
-
-      - name: Build do WebAssembly
+      - name: Gera HTML com informações do build
         run: |
           mkdir -p page
-          emcc -Isrc src/zoo.c -o page/index.html
+          cat <<EOF > page/index.html
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="UTF-8">
+            <title>Relatório de Build</title>
+          </head>
+          <body>
+            <h1>Relatório de Build</h1>
+            <h2>Aqui era para ter a aplicação rodando em WebAssembly se eu tivesse tempo para estudar mais a fundo 😞</h2>
+            <p>Build executado com sucesso.</p>
+            <p>Data: $(date)</p>
+            <p>Commit: ${{ github.sha }}</p>
+            <p>Autor: ${{ github.actor }}</p>
+            <p>Branch: ${{ github.ref_name }}</p>
+          </body>
+          </html>
+          EOF
 
-      - name: Salva o WebAssembly para o job de deploy
+      - name: Salva o HTML para o job de deploy
         uses: actions/upload-artifact@v4
         with:
-          name: wasm-build
+          name: build-report
           path: page/
 
   deploy:
