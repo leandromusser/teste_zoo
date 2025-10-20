@@ -1,3 +1,3 @@
 ## Trabalho de Teste de Software
 
-Após a finalização do deploy, o aplicativo estará disponível em [❤️❤️.ws](https://❤️❤️.ws)
+Após o deploy, informações básicas da última build estarão disponíveis em [❤️❤️.ws](https://❤️❤️.ws)
