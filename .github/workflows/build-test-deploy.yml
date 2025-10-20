@@ -23,7 +23,7 @@ jobs:
           ./zoo_test.out
 
   build:
-    name: Build do WebAssembly
+    name: Build do HTML
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     needs: test
@@ -66,7 +66,7 @@ jobs:
     needs: build
 
     steps:
-      - name: Download do WebAssembly do job anterior
+      - name: Download do HTML do job anterior
         uses: actions/download-artifact@v4
         with:
           name: build-report
